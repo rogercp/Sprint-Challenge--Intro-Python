@@ -1,5 +1,7 @@
 # The following list comprehension exercises will make use of the 
 # defined Human class. 
+import re
+
 class Human:
     def __init__(self, name, age):
         self.name = name
@@ -24,24 +26,24 @@ humans = [
 # Write a list comprehension that creates a list of names of everyone
 # whose name starts with 'D':
 print("Starts with D:")
-a = []
+a = [names.name for names in humans if names.name[0] == "D"]
 print(a)
 
 # Write a list comprehension that creates a list of names of everyone
 # whose name ends in "e".
 print("Ends with e:")
-b = []
+b = [names.name for names in humans if names.name[-1] == "e"]
 print(b)
 
 # Write a list comprehension that creates a list of names of everyone
 # whose name starts with any letter between 'C' and 'G' inclusive.
 print("Starts between C and G, inclusive:")
-c = []
+c = [names.name for names in humans if names.name[0] in ("C","D","E","E","F","G")]
 print(c)
 
 # Write a list comprehension that creates a list of all the ages plus 10.
 print("Ages plus 10:")
-d = []
+d = [ages.age+10 for ages in humans]
 print(d)
 
 # Write a list comprehension that creates a list of strings which are the name
